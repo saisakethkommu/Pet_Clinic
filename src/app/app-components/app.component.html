@@ -1,0 +1,31 @@
+<main class="page bg-white" id="petratings">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 bg-white">
+
+        <div class="container">
+        <!--  <h2 class="py-5">{{title}}</h2>-->
+            
+          <app-add 
+            (addEvt)= "addApt($event)"></app-add>
+          <app-search
+            (queryEvt)="searchApt($event)"
+            (orderEvt)="orderApt($event)"
+             [orderBy] = "orderBy"
+             [orderType] = "orderType"
+
+            ></app-search>
+        <!--<app-list 
+          [aptList]="theList" 
+          (deleteEvt) = "deleteApt($event)"></app-list> <!--marking to handle the delete event. $event is same as theApt in the appcomponent.ts-->
+          <app-list 
+          [aptList]="modifiedList" 
+          (deleteEvt) = "deleteApt($event)"
+          (updateEvt) = "updateApt($event)"
+          ></app-list>
+        </div>
+
+      </div><!-- col-md-12 -->
+    </div><!-- row -->
+  </div><!-- container -->
+</main><!-- main -->
